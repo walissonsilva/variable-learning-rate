@@ -109,14 +109,8 @@ class Rprop(object):
                 self.plot(z, epoca)
         
         print MSE[-1]
-
-        plt.ioff()
-        plt.figure(1)
-        plt.title('Mean Square Error (MSE)')
-        plt.xlabel('Training Epochs')
-        plt.ylabel('MSE')
-        plt.plot(np.arange(0, MSE.size), MSE)
-        plt.show()
+        
+        return MSE
 
     def plot(self, saida, epoca):
         plt.figure(0)
@@ -130,6 +124,15 @@ class Rprop(object):
         plt.show()
         plt.pause(1e-10)
 
+    def plot_MSE(self, MSE):
+        plt.ioff()
+        plt.figure(1)
+        plt.title('Mean Square Error (MSE)')
+        plt.xlabel('Training Epochs')
+        plt.ylabel('MSE')
+        plt.plot(np.arange(0, MSE.size), MSE)
+        plt.show()
+
     def show_function(self):
         plt.figure(0)
         plt.title('Second Function')
@@ -138,7 +141,8 @@ class Rprop(object):
         plt.plot(self.X_train, self.d)
         plt.show()
 
-back = Rprop()
+#rprop = Rprop()
 
-back.load_function()
-back.train()
+#rprop.load_function()
+#MSE = rprop.train()
+#rprop.plot_MSE(MSE)
