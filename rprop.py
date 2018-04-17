@@ -119,8 +119,9 @@ class Rprop(object):
         plt.legend([y, d], ['Output of Network Neural', 'Desired Value'])
         plt.xlabel('x')
         plt.ylabel('f(x)')
+        plt.title('Rprop')
         plt.text(np.min(self.X_train) - np.max(self.X_train) * 0.17  , np.min(self.d) - np.max(self.d) * 0.17, 'Progress: ' + str(round(float(epoca) / self.epoch_max * 100, 2)) + '%')
-        plt.axis([np.min(self.X_train) - np.max(self.X_train) * 0.2, np.max(self.X_train) * 1.2, np.min(self.d) - np.max(self.d) * 0.2, np.max(self.d) * 1.4])
+        plt.axis([np.min(self.X_train) - np.max(self.X_train) * 0.2, np.max(self.X_train) * 1.2, np.min(self.d) - np.max(self.d) * 0.2, np.max(self.d) * 1.5])
         plt.show()
         plt.pause(1e-10)
 
